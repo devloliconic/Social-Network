@@ -3,14 +3,6 @@ html{
 }
 
 
-.logo{
-  font-family: 'Satisfy', cursive;
-  margin: 0;
-  margin-top: 10px;
-  font-size: 30px;
-  color: #6fe6a0;
-  text-align: center;
-}
 
 .app-wrapper {
   max-width: 1200px;
@@ -24,64 +16,8 @@ html{
   grid-gap: 10px;
 }
 
-.header {
-  grid-area: h;
-/* Created with https://www.css-gradient.com */
-background: #10BAD6;
-background: -webkit-linear-gradient(top, #10BAD6, #7A60D2);
-background: -moz-linear-gradient(top, #10BAD6, #7A60D2);
-background: linear-gradient(to bottom, #10BAD6, #7A60D2);
-}
-.header img {
-  width: 20px;
-}
 
-.nav {
-  grid-area: n;
-  /* Created with https://www.css-gradient.com */
-/* Created with https://www.css-gradient.com */
-padding: 10px;
-background: #B1C3EE;
-background: -webkit-linear-gradient(top, #B1C3EE, #626352);
-background: -moz-linear-gradient(top, #B1C3EE, #626352);
-background: linear-gradient(to bottom, #B1C3EE, #626352);
-}
 
-.content {
-  /* Created with https://www.css-gradient.com */
-  background: #AD3996;
-  background: -webkit-linear-gradient(top, #AD3996, #BA8536);
-  background: -moz-linear-gradient(top, #AD3996, #BA8536);
-  background: linear-gradient(to bottom, #AD3996, #BA8536);
-  grid-area: c;
-}
 
-.content img{
-  width: 100%;
-  height: 200px;
-}
 
-.link{
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  transition: .2s all linear;
-}
-.link:hover{
-  color: #6fe6a0;
-}
 
-.item{
-  text-align: center;
-  margin-bottom: 20px;
-}
-.item:last-of-type{
-  margin-bottom: 0;
-}
-
-.img{
-  background-image: url(https://million-wallpapers.ru/wallpapers/4/98/531441352518448/raznocvetnye-kamni-maakrosemka.jpg);
-  background-size: cover;
-  width: 100%;
-  height: 100px;
-}
