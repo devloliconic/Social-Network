@@ -1,4 +1,4 @@
-html{
+html {
   font-family: 'Edu VIC WA NT Beginner', cursive;
 }
 
@@ -15,9 +15,3 @@ html{
   grid-template-columns: 2fr 10fr;
   grid-gap: 10px;
 }
-
-
-
-
-
-
