@@ -1,17 +1,25 @@
 html {
-  font-family: 'Edu VIC WA NT Beginner', cursive;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
 }
 
 
-
 .app-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-areas:
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-areas:
     "h h "
     "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
+}
+
+.app-wrapper-content {
+    grid-area: c;
+    /* Created with https://www.css-gradient.com */
+    background: #291BA1;
+    background: -webkit-linear-gradient(top left, #291BA1, #6AE5F4);
+    background: -moz-linear-gradient(top left, #291BA1, #6AE5F4);
+    background: linear-gradient(to bottom right, #291BA1, #6AE5F4);
 }
