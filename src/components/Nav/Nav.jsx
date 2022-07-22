@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <nav className={classes.nav}>
       <div className={classes.item}>
-        <Link to={"/profile"} className={classes.link} >Profile</Link>
+        <Link to={"/"} className={classes.link} >Profile</Link>
       </div>
       <div className={classes.item}>
         <Link to={"/dialogs"} className={classes.link} >Messages</Link>

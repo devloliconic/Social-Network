@@ -1,0 +1,11 @@
+
+.img {
+    background-image: url(https://million-wallpapers.ru/wallpapers/4/98/531441352518448/raznocvetnye-kamni-maakrosemka.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 100px;
+}
+
+.profileinfo{
+    padding: 10px;
+}

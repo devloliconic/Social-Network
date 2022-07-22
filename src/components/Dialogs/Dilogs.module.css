@@ -1,0 +1,43 @@
+
+.dialogsItems{
+    padding: 10px 10px 0 10px;
+    border-right: 2px solid black;
+}
+.messages{
+    padding: 10px;
+}
+
+.dialog{
+    padding: 10px;
+    border-bottom: 1px solid black;
+    width: 50%;
+    background: gray;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: .2s all linear;
+}
+.dialog:hover .person{
+    color: black;
+}
+.dialog:hover{
+    background: white;
+}
+.dialog:last-of-type{
+    margin-bottom: 0;
+}
+.person{
+    text-decoration: none;
+    color: white;
+    transition: .2s all linear;
+}
+
+.message{
+    color: white;
+    font-size: 18px;
+}
+.img{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
