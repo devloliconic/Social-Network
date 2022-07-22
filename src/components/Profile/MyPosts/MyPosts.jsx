@@ -2,7 +2,8 @@ import React from "react";
 import s from "./MyPosts.module.css"
 import Post from "./Post/Post";
 
-const MyPosts = () => {
+const MyPosts = (props) => {
+    const postData = props.posts.map( obj => <Post id={obj.id} url={obj.url} message={obj.message}/>)
     return (
         <div className={s.post}>
             <h1 className={s.title}>My postst</h1>
@@ -10,10 +11,7 @@ const MyPosts = () => {
                 <textarea></textarea>
             </div>
             <button className={s.btn}>Постануть</button>
-            <Post message="i love react"
-                  url="https://otvet.imgsmail.ru/download/875a8375f91de049494d6073098e8a2f_8cc5a2104789fc81754a8761aaa8cdf5.jpg"/>
-            <Post message="hi"
-                  url="https://otvet.imgsmail.ru/download/875a8375f91de049494d6073098e8a2f_8cc5a2104789fc81754a8761aaa8cdf5.jpg"/>
+            {postData}
         </div>
     );
 };
