@@ -14,16 +14,18 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 
 
+
 const App = (props) => {
+
     return (
         <div className={"app-wrapper"}>
             <Header/>
-            <Nav/>
+            <Nav state = {props.appState.navPage}/>
             <div className={"app-wrapper-content"}>
                 <Routes>
-                    <Route path="/" element={<Profile posts={props.post}/>}/>
+                    <Route path="/" element={<Profile state={props.appState.profilePage} addPost={props.addPost} addText = {props.addText}/>}/>
                     <Route path="/dialogs"
-                           element={<Dialogs dialogsData={props.dialogsData} messagesPerson={props.messagesPerson}/>}/>
+                           element={<Dialogs state={props.appState.dialogsPage}/>}/>
                     <Route path="/news" element={<News/>}/>
                     <Route path="/music" element={<Music/>}/>
                     <Route path="/settings" element={<Settings/>}/>

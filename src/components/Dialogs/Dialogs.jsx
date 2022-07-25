@@ -20,8 +20,17 @@ const Message = (props) => {
 
 const Dialogs = (props) => {
 
-    const dialogsPerson = props.dialogsData.map(obj => <DialogItem id={obj.id} name={obj.name} url={obj.url}/>)
-    const messagesItem = props.messagesPerson.map(obj => <Message id={obj.id} message={obj.message}/>)
+    const dialogsPerson = props.state.dialogsData.map(obj => <DialogItem id={obj.id} name={obj.name} url={obj.url}/>)
+    const messagesItem = props.state.messagesPerson.map(obj => <Message id={obj.id} message={obj.message}/>)
+
+
+    const newPosRef = React.createRef()
+    const addMessage = () =>{
+        let text = newPosRef.current.value;
+        alert(text);
+    }
+
+
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
@@ -29,6 +38,8 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 {messagesItem}
+                <textarea ref ={newPosRef}></textarea>
+                <button onClick={ addMessage }>asda</button>
             </div>
         </div>
     );

@@ -25,3 +25,7 @@ background: linear-gradient(to bottom, #B1C3EE, #626352);
 .item:last-of-type{
   margin-bottom: 0;
 }
+
+.friends_list{
+  margin-top: 40px;
+}
