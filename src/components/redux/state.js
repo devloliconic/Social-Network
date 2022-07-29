@@ -145,4 +145,15 @@ export const updateNewPostActionCreater = (textMess) =>{
         text: textMess,
     }
 }
+export const addMessageCreater = () =>{
+    return {
+        type : ADD_MESSAGE
+    }
+}
+export const updateNewMessageCreater = (textMess) =>{
+    return{
+        type: UPDATE_NEW_MESSAGE_TEXT,
+        text: textMess,
+    }
+}
 export default store

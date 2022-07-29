@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import s from "./Dilogs.module.css"
-import {BrowserRouter, Link, NavLink, Route, Routes} from "react-router-dom";
-import Profile from "../Profile/Profile";
+import {NavLink} from "react-router-dom";
+import {addMessageCreater, updateNewMessageCreater} from "../redux/state";
 
 const DialogItem = (props) => {
     return (
@@ -23,11 +23,16 @@ const Dialogs = (props) => {
     const dialogsPerson = props.state.dialogsData.map(obj => <DialogItem id={obj.id} name={obj.name} url={obj.url}/>)
     const messagesItem = props.state.messagesPerson.map(obj => <Message id={obj.id} message={obj.message}/>)
 
+    const [message, setMessage] = useState(props.state.newMessageText)
 
-    const newPosRef = React.createRef()
+    const onTextChange = (e) =>{
+        setMessage(e.target.value);
+        props.dispatch(updateNewMessageCreater(message))
+    }
+
     const addMessage = () =>{
-        let text = newPosRef.current.value;
-        alert(text);
+        props.dispatch(addMessageCreater())
+        setMessage(props.state.newMessageText)
     }
 
 
@@ -38,8 +43,8 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 {messagesItem}
-                <textarea ref ={newPosRef}></textarea>
-                <button onClick={ addMessage }>asda</button>
+                <textarea value={message} onChange={onTextChange}></textarea>
+                <button onClick={addMessage}>send</button>
             </div>
         </div>
     );

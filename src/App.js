@@ -18,6 +18,7 @@ import Settings from "./components/Settings/Settings";
 const App = (props) => {
 
     return (
+
         <div className={"app-wrapper"}>
             <Header/>
             <Nav state = {props.appState.navPage}/>
@@ -25,7 +26,7 @@ const App = (props) => {
                 <Routes>
                     <Route path="/" element={<Profile state={props.appState.profilePage} dispatch = {props.dispatch}/>}/>
                     <Route path="/dialogs"
-                           element={<Dialogs state={props.appState.dialogsPage}/>}/>
+                           element={<Dialogs state={props.appState.dialogsPage} dispatch = {props.dispatch}/>}/>
                     <Route path="/news" element={<News/>}/>
                     <Route path="/music" element={<Music/>}/>
                     <Route path="/settings" element={<Settings/>}/>
