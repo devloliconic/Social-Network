@@ -5,6 +5,7 @@ import s from "./Nav.module.css"
 import FriendsList from "./FriendsList/FriendsList";
 
 const Nav = (props) => {
+
     return (
         <div className={s.nav}>
             <nav>

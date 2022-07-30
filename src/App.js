@@ -16,12 +16,11 @@ import Settings from "./components/Settings/Settings";
 
 
 const App = (props) => {
-
     return (
 
         <div className={"app-wrapper"}>
             <Header/>
-            <Nav state = {props.appState.navPage}/>
+            <Nav state = {props.appState.sidebar}/>
             <div className={"app-wrapper-content"}>
                 <Routes>
                     <Route path="/" element={<Profile state={props.appState.profilePage} dispatch = {props.dispatch}/>}/>

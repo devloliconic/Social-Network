@@ -1,7 +1,7 @@
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
-const UPDATE_NEW_MESSAGE_TEXT = "UPDATE-NEW-MESSAGE-TEXT";
-const ADD_MESSAGE = "ADD-MESSAGE";
+import profileReducer from "./profileReducer";
+import dialogsReducer from "./dialogsReducer";
+import navPageReducer from "./navPageReducer";
+
 
 let store = {
     _state:{
@@ -103,57 +103,12 @@ let store = {
 
 
     dispatch(action){
-        if(action.type === "ADD-POST"){
-            let newPost = {
-                id: '5',
-                message: this._state.profilePage.newPostMessage,
-                url: "https://otvet.imgsmail.ru/download/875a8375f91de049494d6073098e8a2f_8cc5a2104789fc81754a8761aaa8cdf5.jpg"
-            };
-            this._state.profilePage.posts.push(newPost);
-            this._state.profilePage.newPostMessage = '';
-            this._callSubscriber(this._state);
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
+        this._state.navPage = navPageReducer(this._state.navPage, action)
+        this._callSubscriber(this._state);
+    }
+}
 
-        }
-        else if(action.type === "UPDATE-NEW-POST-TEXT"){
-            this._state.profilePage.newPostMessage = action.text;
-            this._callSubscriber(this._state);
-        }
-        else if(action.type === "UPDATE-NEW-MESSAGE-TEXT"){
-            this._state.dialogsPage.newMessageText = action.text;
-            this._callSubscriber(this._state);
-        }
-        if(action.type === "ADD-MESSAGE"){
-            let newMessage = {
-                id: '5',
-                message: this._state.dialogsPage.newMessageText,
-            };
-            this._state.dialogsPage.messagesPerson.push(newMessage);
-            this._state.dialogsPage.newMessageText = '';
-            this._callSubscriber(this._state);
 
-        }
-    }
-}
-export const addPostActionCreater = () =>{
-    return {
-        type : ADD_POST
-    }
-}
-export const updateNewPostActionCreater = (textMess) =>{
-    return{
-        type: UPDATE_NEW_POST_TEXT,
-        text: textMess,
-    }
-}
-export const addMessageCreater = () =>{
-    return {
-        type : ADD_MESSAGE
-    }
-}
-export const updateNewMessageCreater = (textMess) =>{
-    return{
-        type: UPDATE_NEW_MESSAGE_TEXT,
-        text: textMess,
-    }
-}
 export default store
